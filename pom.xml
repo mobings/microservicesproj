@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+   <groupId>com.moby</groupId>
+  <artifactId>microservices</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Microservices Movie-Cinema</name>
+   <parent>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-parent</artifactId>
+        <version>Brixton.RELEASE</version>
+        
+     </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring.boot>1.4.2.RELEASE</spring.boot>
+        <spring.boot.eureka>1.2.2.RELEASE</spring.boot.eureka>
+    </properties>
+
+    <modules>
+     <module>netflix-eureka-server</module>
+        <module>zuulgateway</module>
+        <module>movie-service</module>
+        <module>cinema-service</module>
+        <module>cloudConfigServer</module>
+        <module>authentication.service</module>
+        <module>MainClient</module>
+        
+     </modules>
+
+<dependencies>
+      <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.22</version>
+    <scope>provided</scope>
+</dependency>
+
+</dependencies>
+
+  
+  
+</project>

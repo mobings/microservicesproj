@@ -1,0 +1,1 @@
+insert into movies(title,description,released) values ('MovieAction','action thrill',true),('MovieScifi','scifi',false),('MovieFamily','family',false),('MovieComedy','comedy',true)

@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.movie.App.model","l":"Movie"},{"p":"com.movie.App.controller","l":"MovieController"},{"p":"com.movie.App.repository","l":"MovieRepository"},{"p":"com.movie.App","l":"MovieSpringApplication"}];updateSearchResults();

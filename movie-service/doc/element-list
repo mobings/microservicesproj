@@ -1,0 +1,4 @@
+com.movie.App
+com.movie.App.controller
+com.movie.App.model
+com.movie.App.repository

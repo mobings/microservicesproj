@@ -1,0 +1,3 @@
+edu\tus\authenticationservice\security\WebSecurityConfigurer.class
+edu\tus\authenticationservice\security\OAuth2Config.class
+edu\tus\authenticationservice\AuthenticationServiceApplication.class

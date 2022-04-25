@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: DELL-7440-i7
+Build-Jdk: 17.0.1
+Implementation-Title: MicroSvcClient
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.microservice.client
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/MainClient
+Created-By: Maven Integration for Eclipse
+

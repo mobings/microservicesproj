@@ -3,6 +3,8 @@ package com.cinema.App.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,15 +19,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.cinema.App.cinemaexception.Cinemanotfoundexception;
+import com.cinema.App.commons.ServiceOneDAO;
 import com.cinema.App.model.Cinema;
+import com.cinema.App.model.ServiceOneEntity;
 import com.cinema.App.repository.CinemaRepository;
+
+
 
 @RestController
 public class CinemaController {
+	
+	
+	 Logger log = LoggerFactory.getLogger(CinemaController.class);
 
 	@Autowired
 	CinemaRepository cinemaRepository;
@@ -57,8 +67,8 @@ public class CinemaController {
 
 		if (cinemaData.isPresent()) {
 			return new ResponseEntity<>(cinemaData.get(), HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}  else {
+			throw new Cinemanotfoundexception("No Cinema with id: " + id);
 		}
 	}
 	
@@ -70,7 +80,9 @@ public class CinemaController {
 	
 	
 	@GetMapping("/cinemas/movies/{id}")
+	
 	public List<Cinema> getcinemaByMovieId(@PathVariable("id") long id) {
+		log.info("Cinema-Service Called");
 		List<Cinema> cinemas = new ArrayList<Cinema>();
 		return cinemaRepository.findByMID(id);
 				
@@ -131,6 +143,8 @@ public class CinemaController {
 		}
 	}
 
+	
+	
 	@DeleteMapping("/cinemas")
 	public ResponseEntity<HttpStatus> deleteAllcinemas() {
 		try {
@@ -142,7 +156,26 @@ public class CinemaController {
 
 	}
 	
+	//resilency
 	
+	@Autowired
+	ServiceOneDAO serviceOneDAO;
+
+	@GetMapping("/serviceone-dbdelayed/{serviceId}/{delayMs}")
+	//@HystrixCommand
+	public ServiceOneEntity getServiceOneInfoDbDelayed(@PathVariable int serviceId, 
+			@PathVariable int delayMs) {
+		return serviceOneDAO.getById(serviceId, delayMs);
+	}
+	
+//	@GetMapping("/serviceone-hanging")
+//	public String getServiceOneHangingCall() {
+//		return serviceOneDAO.callHangingService();
+//	}
+//	
+	public ServiceOneEntity returnDummy(Exception e){
+		return new ServiceOneEntity(12,"Dummy Data");
+	}
 	
 
 

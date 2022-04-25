@@ -1,1 +1,2 @@
 insert into cinema(C_name,C_city,C_start_dat,MID,C_boxoffice) values ('Cinema1','City1','22-Jan-22',1,5000),('Cinema2','City1','22-Jan-22',1,7000),('Cinema1','City1','22-Jan-22',2,10000)
+insert into services(description)values('svc1 descp'),('svc2'),('svc3')

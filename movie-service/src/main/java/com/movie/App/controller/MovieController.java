@@ -30,7 +30,8 @@ import com.movie.App.model.Movie;
 
 import com.movie.App.movieexceptions.MovieNullExceptions;
 import com.movie.App.repository.MovieRepository;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javassist.NotFoundException;
 
 @RestController
@@ -38,7 +39,7 @@ import javassist.NotFoundException;
 
 public class MovieController {
 
-	
+	 Logger log = LoggerFactory.getLogger(MovieController.class);
 	
 	@Autowired
 	MovieRepository movieRepository;
@@ -83,7 +84,7 @@ public class MovieController {
 	
 	@GetMapping("/movies/cinemas/{id}")
 	public List<Cinema> getcinemaByMovieId(@PathVariable("id") long id) {
-		//List<Cinema> cinemas = new ArrayList<Cinema>();
+		log.info("calling cinema-service via Feign");
 		return feigncinema.getcinemaByMovieId(id);
 			
 		

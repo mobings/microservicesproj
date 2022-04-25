@@ -41,7 +41,7 @@ public class Cinema {
 
 
 	public void setC_name(String c_name) {
-		C_name = c_name;
+		this.C_name = c_name;
 	}
 
 
@@ -61,7 +61,7 @@ public class Cinema {
 
 
 	public void setC_city(String c_city) {
-		C_city = c_city;
+		this.C_city = c_city;
 	}
 
 
@@ -81,7 +81,7 @@ public class Cinema {
 
 
 	public void setC_start_dat(String c_start_dat) {
-		C_start_dat = c_start_dat;
+		this.C_start_dat = c_start_dat;
 	}
 
 
@@ -101,7 +101,7 @@ public class Cinema {
 
 
 	public void setMID(long MID) {
-		MID = MID;
+		this.MID = MID;
 	}
 
 
@@ -121,7 +121,7 @@ public class Cinema {
 
 
 	public void setC_boxoffice(long c_boxoffice) {
-		C_boxoffice = c_boxoffice;
+		this.C_boxoffice = c_boxoffice;
 	}
 
 
@@ -135,11 +135,11 @@ public Cinema() {};
 	public Cinema(String c_name, String c_city, String c_start_dat, long MID, long c_boxoffice) {
 		super();
 	
-		C_name = c_name;
-		C_city = c_city;
-		C_start_dat = c_start_dat;
-		MID = MID;
-		C_boxoffice = c_boxoffice;
+		this.C_name = c_name;
+		this.C_city = c_city;
+		this.C_start_dat = c_start_dat;
+		this.MID = MID;
+		this.C_boxoffice = c_boxoffice;
 	}
 
 

@@ -1,0 +1,6 @@
+projectKey=cinema-service-sonar-scannar
+serverUrl=http://localhost:9000
+serverVersion=9.4.0.54424
+dashboardUrl=http://localhost:9000/dashboard?id=cinema-service-sonar-scannar
+ceTaskId=AYBck_im4JXvMAZ5ixC2
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYBck_im4JXvMAZ5ixC2
